@@ -14,6 +14,29 @@ import {
   Date,
 } from './BlogCard.styled';
 
-export const BlogCard = () => {
-  return <div>BlogCard</div>;
+import { timeToNow } from 'helpers/formatDistance';
+
+export const BlogCard = ({article:{name,postedAt, poster, tag,title,description,avatar}}) => {
+  return <Card>
+  <CardHeader>
+    <CardPoster
+      src={poster}
+      alt={title}
+    />
+  </CardHeader>
+  <CardBody>
+    <Tag>{tag}</Tag>
+    <CardTitle>{title}</CardTitle>
+    <CardText> {description}    </CardText>
+  </CardBody>
+  <CardFooter>
+    <UserBox>
+      <Avatar src={avatar} alt={name} />
+      <UserInfo>
+        <UserName>{name}</UserName>
+        <Date>{timeToNow(postedAt)}</Date>
+      </UserInfo>
+    </UserBox>
+  </CardFooter>
+</Card>;
 };
