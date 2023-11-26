@@ -11,6 +11,7 @@ import {
 import article from 'data/article.json';
 import statsData from 'data/data.json';
 import forbesList from 'data/forbes.json';
+import transactions from 'data/transactions';
 
 export const App = () => {
   return (
@@ -34,7 +35,7 @@ export const App = () => {
         <Heading marginTop="50px" marginBottom="50px" textAlign="center">
           Task 4
         </Heading>
-        <CryptoHistory />
+        <CryptoHistory transactions={transactions} />
       </Container>
     </Section>
   );
